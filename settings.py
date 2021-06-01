@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-4c#jumo!jk&5_wvndf#19)z4z79m!bv++2x_b439$y@v1&l88!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', 'peaceful-falls-93972.herokuapp.com']
 
 
 # Application definition
