@@ -85,10 +85,18 @@ if database_url is None:
         }
     }
 else:
+    database_url = database_url.replace('postgres: //', '')
+    credenciais, url = database_url.split('@')
+    usuario, senha = credenciais.split(':')
+    dominio_porta, banco_de_dados = url.split('/')
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': BASE_DIR / 'db.sqlite3',
+            'NAME': banco_de_dados,
+            'USER': usuario,
+            'PASSWORD': senha,
+            'HOST': host,
+            'PORT': port,
         }
     }
 
